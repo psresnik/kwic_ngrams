@@ -3,6 +3,7 @@ import os
 import sys
 import codecs
 import re
+from tqdm import tqdm
 
 def read_corpus(arg):
     if os.path.isdir(arg):
@@ -35,7 +36,7 @@ def create_kwic_index(nlp, corpus, term_counts_file, kwic_index_file, window_wid
     progress_counter     = 0
 
     sys.stderr.write("Creating KWIC index for " + corpus + " using terms counted in " + term_counts_file + "\n")
-    for line in lines:
+    for line in tqdm(lines):
         first_tok = line.split(' ')[0]
         analysis  = nlp(line)
         tokens    = [token.lower_ for token in analysis
