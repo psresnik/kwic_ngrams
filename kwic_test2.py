@@ -1,7 +1,8 @@
 import sys
 import re
 from collections import Counter
-from spacy.en import English
+# from spacy.en import English # Used with older version of spacy
+from spacy.lang.en import English
 from kwic import *
 
 

@@ -1,7 +1,8 @@
 import sys
 import re
 from collections import Counter
-from spacy.en import English
+# from spacy.en import English # Used with older version of spacy
+from spacy.lang.en import English
 from kwic import *
 
 # Example below shows component pieces. For a single top-level call see kwic_test2.py
